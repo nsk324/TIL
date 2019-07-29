@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hi, HTML!</title>
+        <style>
+            h1 {
+                color:aqua;
+            }
+        </style>
+    </head>
+
+
+    <!--Bold-->
+    <div>
+        <b>This is bold.</b>
+        <strong>This is strong.(semantic)</strong>
+    </div>
+    <!--italic-->
+    <div>
+        <i>This is italic</i>
+        <em>This is em.(semantic)</em>
+    </div>
+    <!--highlighted 형광펜-->
+    <h2>This is <mark>Mark</mark>.</h2>
+    
+    <hr>
+    
+    <!--del / ins -->
+    <!--del: 텍스트가 삭제 되었음을 나타냄 (취소선)-->
+    <h2>This is <del>del</del>.</h2>
+    
+    <hr>
+
+    <!--ins: 텍스트가 새로 추가 되었음을 나타냄 (밑줄)-->
+    <h2>This is <ins>ins</ins>.</h2>
+    
+    <hr>
+
+    <!--p / br 개행(self closing) -->
+    <p>
+        This is p tag.<br>
+        This is p tag.<br>
+        This is p tag.<br>
+        This is p tag.<br>
+        This is p tag.<br>
+        This is p tag.<br>
+    </p>
+    
+    <hr>
+    <!-- <p> 이새끼는 그냥 엔터가 말을 안 들음 pre -->
+    
+    <pre>
+        from flask import Flask
+        app = Flask(__name__)
+        @app.route('/')
+        def hello():
+            return 'Hello World!'
+    </pre>
+
+    <!-- hr 이새끼는 구분선을 만들어 줍니다. -->
+    <hr>
+    <!-- q / blockquote -->
+    <p>
+        Justin said, <q>Hello world!</q>
+    </p>
+    <blockquote>
+        Hello world!
+    </blockquote>
+
+    <!-- ol / ul / li -->
+    <ol>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </ol>
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </ul>
+
+
+
+
+    <body>
+        <!--Heading-->
+        <h1>Hi, h1!</h1>
+        <h2>Hi, h2!</h2>
+        <h3>Hi, h3!</h3>
+        <h4>Hi, h4!</h4>
+        <h5>Hi, h5!</h5>
+        <h6>Hi, h6!</h6>
+    </body>
+</html>
