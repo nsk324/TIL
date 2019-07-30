@@ -1,0 +1,21 @@
+h1 {
+    color: blue;
+    font-size: 50%; /*브라우저의 기본 default 사이즈를 기준으로~*/
+}
+
+div{
+    color:red;
+    font-size: 50%;
+}
+
+ul{
+    color: rgb(48,199,66);
+    font-size: 2rem;
+}
+
+div > h2 {
+    color: skyblue;
+    font-size: 5em;
+}
+
+/* em 은 상속의 영향을 받기 때문에 div는 8pixel인데 거기에서 8em이니 40pixel이 되겠디*/

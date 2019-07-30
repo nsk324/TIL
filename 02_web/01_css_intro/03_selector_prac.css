@@ -1,0 +1,37 @@
+/* * {
+    color : olive;
+    font-size: 25px
+} 
+
+전체에 대해서 적용
+*/
+
+/* ol, ul {
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+} 
+
+일부 셀렉터 마다 적용
+*/
+
+/* .favorite{
+    color:indianred;
+}
+
+#title{
+    color: wheat
+} 
+
+class id 선택자
+*/
+
+ol li{
+    color:crimson;
+}
+
+ol>li{
+    color:greenyellow;
+}
