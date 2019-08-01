@@ -1,0 +1,10 @@
+ol > li:nth-child(4){
+    background: blueviolet
+}
+/* 번째 차일드가 li가 아니면 변경하지 않아요 */
+
+ol > li:nth-of-type(4){
+    background: firebrick
+}
+
+/*nth-of-type은 찾습니다*/

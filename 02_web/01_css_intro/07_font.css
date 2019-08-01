@@ -1,0 +1,13 @@
+#font1 {
+    font-size: 30px;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+#font2{
+    font-size: 40px;
+    font-family: 'Lacquer', sans-serif;
+    
+}
