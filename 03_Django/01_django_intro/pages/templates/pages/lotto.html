@@ -1,0 +1,14 @@
+<h1>당신의 로또 번호는 </h1>
+
+{% for lotto in lottos %}
+    <h1> {{ lotto }}</h1>
+{% endfor%}
+
+
+<h1> 그리고 실제 로또 번호는 {{real_lottos}}입니다.</h1>
+
+{% if lottos == real_lottos %}
+    <p>당첨입니다</p>
+{% else %}
+    다음 기회에
+{% endif %}

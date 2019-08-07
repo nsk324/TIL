@@ -1,0 +1,6 @@
+<form action="/user_create/" method="POST">
+    {% csrf_token %} <!--post요청시 반드시 얘가 있어야함-->
+    이름 : <input type="text" name="name">
+    비밀번호 : <input type="password" name="pwd">
+    <input type="submit">
+</form>
