@@ -1,18 +1,3 @@
-def isblock(x,y):
-    global k
-    if x < 0 or x >= r :
-        k += 1
-        return True
-    if y < 0 or y >= r :
-        k += 1
-        return True
-    if arr[y][x] != 0:
-        k += 1
-        return True
-    return False
-
-
-
 T = int(input())
 
 dx = [1, 0, -1, 0]
@@ -40,11 +25,6 @@ for tc in range(T):
             testx = x + dx[k]
             testy = y + dy[k]
 
-
-        # if isblock(testx,testy) == False:
-        #     num += 1
-        #     x = testx
-        #     y = testy
 
     print('#{}'.format(tc+1))
     for hi in arr:
