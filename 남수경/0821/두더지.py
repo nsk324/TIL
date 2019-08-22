@@ -33,7 +33,7 @@ answer = []
 for i in range(1,cnt+1):
     sum = 0
     for j in range(len(visited)):
-        sum += (i * visited[j].count(i)) / i
+        sum += visited[j].count(i)
     answer.append(int(sum))
 answer.sort()
 

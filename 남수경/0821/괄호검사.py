@@ -1,25 +1,29 @@
-def isEmpty():
-    if len(s) == 0: return True
-    else: return False
+import sys.
 
-def push(t):
-    global s
-    s.append(t)
+def check(b):
+    arr = []
+    bi = []
 
-s = list()
+    for i in range(len(b)):
+        if b[i] == '(' or b[i] == '{':
+            arr.append(b[i])
+        if b[i] == ')' or b[i] == '}':
+            if len(arr) == 0:
+                return 0
+            bi.append(b[i])
+            if arr.pop() != bi[-1]:
+                return 0
 
-def check_matching(data):
-    for i in range(len[data]):
-        if data[i] == '(':
-            push(data[i])
-        elif data[i] ==')':
-            if isEmpty(): return False
-            pop()
-    if not isEmpty() : return False
-    else: return True
+    if len(arr) > 0:
+        return 0
+
+    else:
+        return 1
 
 
+T = int(input())
 
-data = input()
-print(check_matching(data))
-
+for tc in range(T):
+    sen = list(input())
+    print('#{} {}'.format(tc + 1, check(sen)))
+    # print(sen)

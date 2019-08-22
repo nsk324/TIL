@@ -3,8 +3,8 @@ def dfs(v):
     print(v, end=' ')
 
     for w in range(V+1):
-        if G[v][w] == 1 and visited[w] == 0:
-            dfs(w)
+        if G[v][w] == 1 and visited[w] == 0: # 현재 v와 연결되어있으며 방문한 적이 없는 w에대해
+            dfs(w) # 불러오쇼
 
 
 import sys
