@@ -22,8 +22,7 @@ for tc in range(T):
 
         if testx<0 or testx >= r or testy<0 or testy >= r or  arr[testy][testx] != 0:
             k = (k+1) % 4
-            testx = x + dx[k]
-            testy = y + dy[k]
+ 
 
 
     print('#{}'.format(tc+1))
