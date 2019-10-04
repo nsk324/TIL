@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body%}
+<h2 class="text-center">Detail 화면</h2>
+<h3>{{ article.pk }}번째 글 입니다.</h3>
+<hr>
+<p>글 제목 : {{ article.title }}</p>
+<p>글 내용 : {{ article.content }}</p>
+<p>글 생성 시각 : {{ article.created_at|date:"Y-m-d"}}</p>
+<p>글 수정 시각 : {{ article.updated_at|date:"M, j, Y" }}</p>
+<hr>
+<a href="{% url 'articles:delete' article.pk %}">[글삭제s]</a>
+<a href="{% url 'articles:edit' article.pk %}">[글수정]</a>
+<a href="{% url 'articles:index'%}">[메인페이지로]</a>
+<!-- <a href="/articles/">[첫 화면으로 돌아가기]</a> -->
+<!-- <a href="/articles/{{article.pk}}/edit/">[글 수정]</a> -->
+<!-- <a href="/articles/{{article.pk}}/delete/">[글 삭제]</a> -->
+{% endblock %}
