@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jobs',
     'articles',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -118,4 +120,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
+# 웹 페이지에서 사용할 정적 파일의 최상위 URL 경로
+# 주의 실제 파일이 위치한 디렉토리는 아님
 STATIC_URL = '/static/'
+
+# 정적 파일이 실제 위치한 경로
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'crud','assets'),
+]
