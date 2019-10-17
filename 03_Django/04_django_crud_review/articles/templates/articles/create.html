@@ -4,6 +4,7 @@
     <h2 class="text-center">NEW</h2>
     <img src="{% static 'images/qk.png' %}" alt="qk">
     <img src="{% static 'articles/images/kimbab.jpg' %}" alt="">
+    
     <form action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <label for="title">Title</label>

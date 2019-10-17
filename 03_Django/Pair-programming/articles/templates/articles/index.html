@@ -1,0 +1,15 @@
+{% extends 'articles/base.html'%}
+
+
+{% block body %}
+
+    {% for article in articles %}
+        <p> 번호 : {{article.pk}}</p>
+        <p> 제목 : {{article.title}}</p>
+        <hr>
+        <a href="{% url 'articles:detail' article.pk %}">[상세 페이지 보기]</a>
+    {% endfor %}
+
+<a href="{% url 'articles:create' %}" > [만들기] </a>
+
+{% endblock %}

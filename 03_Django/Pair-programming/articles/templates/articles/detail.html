@@ -1,0 +1,41 @@
+{% extends 'articles/base.html'%}
+{% load bootstrap4 %}
+
+
+{% block body %}
+    <p> 번호 : {{article.pk}}</p>
+    <p> 제목 : {{article.title}}</p>
+    <p> 내용 : {{article.content}}</p>
+    <hr>
+
+    <form action="{% url 'articles:comment_create' article.pk %}" method="POST">
+
+            {% csrf_token %}
+            {{comment_form}}
+            <input type="submit" value='입력'>    
+        </form>
+
+    {% for comment in comments %}
+        <p> 번호 : {{comment.pk}}</p>
+        <p> 내용 : {{comment.content}}</p>
+        <form action="{% url 'articles:comment_delete' article.pk comment.pk%}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="댓글 삭제" class="btn btn-dark">
+        </form>
+        
+        <hr>
+    {% endfor %}
+
+
+
+
+<form action="{% url 'articles:update' article.pk %}">
+    
+    <input type="submit" value= "수정">
+</form>
+<form action="{% url 'articles:delete' article.pk %}" method = "POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+</form>
+<a href="{% url 'articles:index' %}">[메인페이지]</a>
+{% endblock %}

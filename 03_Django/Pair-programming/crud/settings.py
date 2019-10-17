@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&@@4-tcd32gjx8mnb0x7brvhu615i0+-hd=!jp(0bgonimqe@!'
+SECRET_KEY = '*7kba!$o^y8&7*ek(1&dxk*u9#mf70vrsphrn@a+=6%&t!3g%w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jobs',
     'articles',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
-    'imagekit',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +56,7 @@ ROOT_URLCONF = 'crud.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'crud','templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,23 +119,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-
-# 웹 페이지에서 사용할 정적 파일의 최상위 URL 경로
-# 주의 실제 파일이 위치한 디렉토리는 아님
 STATIC_URL = '/static/'
-
-# 정적 파일이 실제 위치한 경로
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'crud','assets'),
-]
-
-
-#STATIC URL과 비슷
-#업로드된 파일의 주소(url)을 만들어줌
-# 실제 이미지 파일이 업로드 된 디렉토리는 아님
-MEDIA_URL = '/media/'
-
-
-#사용자가 업로드한 이미지 파일의 저장 위치
-#업로드가 끝난 이미지 파일을 위치 시킬 최상위 경로
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
