@@ -8,36 +8,44 @@
 <p> 글 수정 시간 : {{article.updated_at|date:"M,j,Y"}}</p>
 <hr>
 
-<form action="{% url 'articles:comments_create' article.pk %}" method="POST">
-    {% csrf_token %}
-    {{ comment_form.as_p }}
-    <input type="submit" value="댓글생성" class="btn btn-dark">
-</form>
+{% if user.is_authenticated %}
+    <form action="{% url 'articles:comments_create' article.pk %}" method="POST">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="댓글생성" class="btn btn-dark">
+    </form>
+{% else %}
+    <a href="{% url 'accounts:login' %}">[댓글작성을위해 로그인하기]</a>
+{% endif %}
 
-<p><b>댓글 목록</b></p>
+<hr>
+<p><b> [ 댓글 목록 ] </b></p>
 <p>현재까지 댓글 수 : {{ comments.count }}</p>
 {% for comment in comments %}
     <li>댓글 : {{ forloop.revcounter}} : {{ comment.content}}</li>
+    <p><b>작성자 : {{comment.user}} </b></p>
     <form action="{% url 'articles:comments_delete' article.pk comment.pk%}" method="POST">
         {% csrf_token %}
+        {% if comment.user == request.user %}
         <input type="submit" value="댓글 삭제" class="btn btn-warning">
+        {% endif %}
     </form>
 {% empty %}
     <p><b>댓글이 없어요..</b></p>
 {% endfor %}
 
 
-<form action="{%url 'articles:delete' article.pk %}" method="POST">
-    {%csrf_token%}
-    <input type="submit" value="글 삭제">    
-    
-</form>
-<hr>
+{% if article.user == request.user %}
+    <form action="{%url 'articles:delete' article.pk %}" method="POST">
+        {%csrf_token%}
+        <input type="submit" value="글 삭제">    
+        
+    </form>
+    <hr>
+    <a href="{%url 'articles:update' article.pk %}">[글 수정]</a>
+{% endif %}
 
 
-
-
-<a href="{%url 'articles:update' article.pk %}">[글 수정]</a>
 <a href="{% url 'articles:index'%}">[메인 화면]</a>
 
 {% endblock %}
