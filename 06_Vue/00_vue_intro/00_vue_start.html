@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- // 돔은 껍대기 , 알맹이는 다 Vue 인스턴스에 있음 -->
+  <div id="app">
+    {{ message }} - {{count}}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    // Vue(MV(html view)VM(뷰-모델 연결되어있음) ) 코드가 작성될 곳
+    // view 인스턴스와 돔 인스턴스를 연결해줌
+    const app = new Vue ({
+      el: '#app', 
+      data : {
+        message:'Hello, Vue!',
+        count : 0
+      },
+      methods : {
+        // 표현식
+        plus: function() {
+          this.count++
+        },
+        //선언식
+        minus() {
+          this.count--
+        }
+      }
+    })
+  </script>
+</body>
+</html>
